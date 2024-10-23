@@ -15,9 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased text-white">
+      <body className={`antialiased text-white ${font_chakra.className}`}>
         <aside className="top-banner bg-primary sticky h-[50px] flex justify-center items-center">
-          <p className={`${font_chakra.className} text-base md:text-xl`}>
+          <p className="text-base md:text-xl">
             <span className="font-semibold">
               <Link className="underline" href={"https://pambii.quest"}>
                 Pambii Quest

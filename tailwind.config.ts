@@ -9,10 +9,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-        primary: "var(--primary)",
-        transparency: "var(--transparency)",
+        primary: "#D87006",
+        transparency: "#33333380",
+      },
+      backgroundImage: {
+        screen1: "url('../public/bg-1.jpg')",
       },
     },
   },
