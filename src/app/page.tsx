@@ -3,6 +3,7 @@ import pambiiLogo from "@/public/official_logo.webp";
 import Image from "next/image";
 import { useCallback, useMemo, useState } from "react";
 import { moreAboutCategories } from "./lib/placeholder-data";
+import MoreAboutCategory from "./ui/main/header/aside/more-about-category";
 export default function Home() {
   const [toggleAside, setToggleAside] = useState(false);
   const handleToggleAside = useCallback(
@@ -47,7 +48,10 @@ export default function Home() {
               </section>
               <ul className="aside-menu__more-about-container">
                 {moreAboutCategories.map((c, c_i) => (
-                  <li key={`${c.title}${c_i}`}></li>
+                  <MoreAboutCategory
+                    key={`${c.title}${c_i}`}
+                    category_info={c}
+                  />
                 ))}
               </ul>
             </section>

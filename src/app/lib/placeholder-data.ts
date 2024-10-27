@@ -1,7 +1,8 @@
-export const moreAboutCategories: {
+export interface IMoreAboutCategory {
   title: string;
-  links: { title: string; link: string }[];
-}[] = [
+  links?: { title: string; link: string }[];
+}
+export const moreAboutCategories: IMoreAboutCategory[] = [
   {
     title: "PAMBII",
     links: [
@@ -40,10 +41,8 @@ export const moreAboutCategories: {
   },
   {
     title: "Video on YT 11M+",
-    links: [],
   },
   {
     title: "NEWS",
-    links: [],
   },
 ];
