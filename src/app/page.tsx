@@ -46,10 +46,10 @@ export default function Home() {
                   </svg>
                 </button>
               </section>
-              <ul className="aside-menu__more-about-container">
+              <ul className="aside-menu__more-about-category-list grid gap-x-2 mb-8">
                 {moreAboutCategories.map((c, c_i) => (
                   <MoreAboutCategory
-                    key={`${c.title}${c_i}`}
+                    key={`${c.title}-${c_i}`}
                     category_info={c}
                   />
                 ))}

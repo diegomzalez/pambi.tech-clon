@@ -1,4 +1,5 @@
 export interface IMoreAboutCategory {
+  isBeta?: boolean;
   title: string;
   links?: { title: string; link: string }[];
 }
@@ -44,5 +45,6 @@ export const moreAboutCategories: IMoreAboutCategory[] = [
   },
   {
     title: "NEWS",
+    isBeta: true,
   },
 ];
