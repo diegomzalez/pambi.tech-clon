@@ -1,9 +1,11 @@
 "use client";
 import pambiiLogo from "@/public/official_logo.webp";
 import Image from "next/image";
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useState } from "react";
 import { moreAboutCategories } from "./lib/placeholder-data";
-import MoreAboutCategory from "./ui/main/header/aside/more-about-category";
+import SocialMedias from "@/app/ui/social-media";
+import MoreAboutCategory from "@/app/ui/main/header/aside/more-about-category";
+import Link from "next/link";
 export default function Home() {
   const [toggleAside, setToggleAside] = useState(false);
   const handleToggleAside = useCallback(
@@ -54,6 +56,16 @@ export default function Home() {
                   />
                 ))}
               </ul>
+              <section className="aside-menu__footer grid sm:flex gap-x-4 gap-y-4 items-center">
+                <SocialMedias />
+
+                <Link
+                  href="mailto:official@pambi.tech"
+                  className="w-max text-primary p-4 rounded-xl bg-black border border-[#6F6F6F] transition-all duration-400 border-primary"
+                >
+                  Contact Us
+                </Link>
+              </section>
             </section>
           </aside>
           <nav className="header__nav flex justify-between items-center">

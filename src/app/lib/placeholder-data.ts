@@ -1,8 +1,4 @@
-export interface IMoreAboutCategory {
-  isBeta?: boolean;
-  title: string;
-  links?: { title: string; link: string }[];
-}
+import { IMoreAboutCategory } from "./definitions";
 export const moreAboutCategories: IMoreAboutCategory[] = [
   {
     title: "PAMBII",

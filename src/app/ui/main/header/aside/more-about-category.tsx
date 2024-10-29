@@ -1,8 +1,7 @@
 "use client";
-import { IMoreAboutCategory } from "@/app/lib/placeholder-data";
+import { IMoreAboutCategory } from "@/app/lib/definitions";
 import Link from "next/link";
 import { useState } from "react";
-
 export default function MoreAboutCategory({
   category_info,
 }: {
@@ -19,7 +18,13 @@ export default function MoreAboutCategory({
         onClick={() => setToggleMAL((prev) => !prev)}
       >
         <section className="item-container flex justify-between gap-x-2 items-center category-info-container">
-          <p className="text-lg font-bold">{category_info.title}</p>
+          <p className="text-lg font-bold relative">
+            {category_info.title}{" "}
+            {category_info.isBeta && (
+              <span className="absolute text-xs text-primary top-0">beta</span>
+            )}
+          </p>
+
           {category_info?.links && (
             <svg
               width="24"
