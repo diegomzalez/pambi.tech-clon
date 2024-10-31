@@ -1,13 +1,20 @@
 "use client";
 import pambiiLogo from "@/public/official_logo.webp";
-import Image from "next/image";
-import { useCallback, useState } from "react";
-import { moreAboutCategories } from "./lib/placeholder-data";
+import { moreAboutCategories } from "@/app/lib/placeholder-data";
 import SocialMedias from "@/app/ui/social-media";
 import MoreAboutCategory from "@/app/ui/main/header/aside/more-about-category";
+import raydiumLogo from "@/public/raydium_logo.png";
 import Link from "next/link";
+import { Montserrat } from "next/font/google";
+import Image from "next/image";
+import { useCallback, useState } from "react";
+const font_montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: "400",
+});
 export default function Home() {
   const [toggleAside, setToggleAside] = useState(false);
+  const [copied, setCopied] = useState(false);
   const handleToggleAside = useCallback(
     () => setToggleAside((prev) => !prev),
     [toggleAside]
@@ -58,7 +65,6 @@ export default function Home() {
               </ul>
               <section className="aside-menu__footer grid sm:flex gap-x-4 gap-y-4 items-center">
                 <SocialMedias />
-
                 <Link
                   href="mailto:official@pambi.tech"
                   className="w-max text-primary p-4 rounded-xl bg-black border border-[#6F6F6F] transition-all duration-400 border-primary"
@@ -104,6 +110,78 @@ export default function Home() {
             </section>
           </nav>
         </header>
+        <section className="main__top-section">
+          <section className="welcome-and-radium-section-container max-w-6xl mx-auto py-4 px-4 pb-12 grid grid-cols-1 lg:grid-cols-2 lg:mt-12 lg:mb-8">
+            <section className="welcome-section appear-from-left relative text-center lg:text-start mb-10">
+              <h1 className="text-3xl lg:text-5xl font-semibold mb-4 lg:mb-6">
+                Welcome to the
+                <br />
+                <span className="text-primary whitespace-nowrap">PAMBII</span>
+                &nbsp;Universe!
+              </h1>
+              <h3
+                className={
+                  "text-lg lg:text-xl mb-4 text-[#C9C9C9] " +
+                  font_montserrat.className
+                }
+              >
+                <span className="text-primary">$PAMBII</span> is a token with
+                functionality! A Pokémon-Style fighting game, and a news and
+                quest platform for projects to get sponsored by the largest
+                community from Spain! Created by the biggest KOL in Spain, Dalas
+              </h3>
+              <section className="contract-address-container bg-[#1e1e1e] rounded-lg flex p-2">
+                <input
+                  type="text"
+                  className="flex-1 bg-transparent text-center p-1 text-md text-[#f5f5f5]"
+                  value="8dGUaPCybF4e2EbqtKcDsvW74shNTsabd5M6z6zG9BN2"
+                  readOnly
+                />
+                <button
+                  onClick={() => {
+                    navigator.clipboard.writeText(
+                      "8dGUaPCybF4e2EbqtKcDsvW74shNTsabd5M6z6zG9BN2"
+                    );
+                    setCopied((prev) => !prev);
+                    setTimeout(() => setCopied((prev) => !prev), 2000);
+                  }}
+                  className="group bg-primary rounded-lg w-[33px] h-[33px] flex items-center transition-all justify-center ml-2 hover:scale-105 hover:shadow-button"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    className="w-4 h-4"
+                  >
+                    <path
+                      fill="currentColor"
+                      fillRule="evenodd"
+                      d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z"
+                      clipRule="evenodd"
+                    ></path>
+                  </svg>
+                  <span className="absolute bottom-[110%] bg-[#333] px-3 py-1 rounded text-sm opacity-0 group-hover:opacity-100">
+                    {copied ? "Copied" : "Copy"}
+                  </span>
+                </button>
+              </section>
+            </section>
+            <section className="pambii-on-raydium-section appear_from_right lg:ml-10 relative flex flex-col-reverse justify-end mb-4">
+              <section className="pambii-raydium-info mt-10 text-[#373737] rounded-lg py-6 px-6">
+                <section className="mt-10 text-white text-lg sm:text-xl lg:text-2xl font-semibold mb-4 lg:mb-6 z-10 flex items-center justify-center">
+                  <p>PAMBII is Officially on</p>
+                  <Image
+                    className="logo-scale ml-2 w-12 h-12 transition-transform hover:cursor-pointer"
+                    src={raydiumLogo}
+                    alt="raydium logo."
+                  />
+                </section>
+              </section>
+            </section>
+          </section>
+        </section>
       </section>
     </main>
   );
