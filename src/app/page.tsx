@@ -2,12 +2,13 @@
 import pambiiLogo from "@/public/official_logo.webp";
 import { moreAboutCategories } from "@/app/lib/placeholder-data";
 import SocialMedias from "@/app/ui/social-media";
-import MoreAboutCategory from "@/app/ui/main/header/aside/more-about-category";
+import MoreAboutCategoryAside from "@/app/ui/main/header/aside/more-about-category";
 import raydiumLogo from "@/public/raydium_logo.png";
 import Link from "next/link";
 import { Montserrat } from "next/font/google";
 import Image from "next/image";
 import { useCallback, useState } from "react";
+import MoreAboutCategoryHeader from "./ui/main/header/nav/more-about-category";
 const font_montserrat = Montserrat({
   subsets: ["latin"],
   weight: "400",
@@ -22,7 +23,7 @@ export default function Home() {
   return (
     <main>
       <section className="main__header-container bg-screen1 lg:bg-cover">
-        <header className="max-w-7x1 mx-auto p-6">
+        <header className="lg:appear_from_top max-w-7xl mx-auto p-6">
           <aside
             className={`header__aside-menu z-20 bg-transparency fixed h-svh w-screen transition-all duration-700 top-0 bottom-0 left-0 ${
               toggleAside ? "-translate-x-0" : "-translate-x-full"
@@ -57,7 +58,7 @@ export default function Home() {
               </section>
               <ul className="aside-menu__more-about-category-list grid gap-x-2 mb-8">
                 {moreAboutCategories.map((c, c_i) => (
-                  <MoreAboutCategory
+                  <MoreAboutCategoryAside
                     key={`${c.title}-${c_i}`}
                     category_info={c}
                   />
@@ -82,6 +83,17 @@ export default function Home() {
                 src={pambiiLogo}
               />
             </picture>
+            <ul className="nav__more-about-category-list gap-x-2 hidden lg:flex">
+              {moreAboutCategories.map((c, c_i) => (
+                <MoreAboutCategoryHeader
+                  title={c.title}
+                  isBeta={c.isBeta}
+                  key={c.title + c_i}
+                  link={c.link}
+                  links={c.links}
+                />
+              ))}
+            </ul>
             <section className="nav__right-section-container flex items-center">
               <button className="nav__btn-connect-wallet text-primary mr-1 py-2 px-3 rounded-xl bg-black border border-primary ">
                 Connect Wallet

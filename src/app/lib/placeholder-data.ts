@@ -38,9 +38,11 @@ export const moreAboutCategories: IMoreAboutCategory[] = [
   },
   {
     title: "Video on YT 11M+",
+    link: "https://www.youtube.com/@DalasReview",
   },
   {
     title: "NEWS",
     isBeta: true,
+    link: "https://pambii.news/",
   },
 ];
