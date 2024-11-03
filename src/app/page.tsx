@@ -4,26 +4,25 @@ import { moreAboutCategories } from "@/app/lib/placeholder-data";
 import SocialMedias from "@/app/ui/social-media";
 import MoreAboutCategoryAside from "@/app/ui/main/header/aside/more-about-category";
 import raydiumLogo from "@/public/raydium_logo.png";
+import MoreAboutCategoryHeader from "@/app/ui/main/header/nav/more-about-category";
+import { chakra, montserrat } from "@/app/fonts";
 import Link from "next/link";
-import { Montserrat } from "next/font/google";
 import Image from "next/image";
 import { useCallback, useState } from "react";
-import MoreAboutCategoryHeader from "./ui/main/header/nav/more-about-category";
-const font_montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: "400",
-});
+
 export default function Home() {
   const [toggleAside, setToggleAside] = useState(false);
   const [copied, setCopied] = useState(false);
   const handleToggleAside = useCallback(
     () => setToggleAside((prev) => !prev),
-    [toggleAside]
+    []
   );
   return (
     <main>
       <section className="main__header-container bg-screen1 lg:bg-cover">
-        <header className="lg:appear_from_top max-w-7xl mx-auto p-6">
+        <header
+          className={`${chakra.className} lg:appear_from_top max-w-7xl mx-auto p-6`}
+        >
           <aside
             className={`header__aside-menu z-20 bg-transparency fixed h-svh w-screen transition-all duration-700 top-0 bottom-0 left-0 ${
               toggleAside ? "-translate-x-0" : "-translate-x-full"
@@ -134,7 +133,7 @@ export default function Home() {
               <h3
                 className={
                   "text-lg lg:text-xl mb-4 text-[#C9C9C9] " +
-                  font_montserrat.className
+                  montserrat.className
                 }
               >
                 <span className="text-primary">$PAMBII</span> is a token with

@@ -1,13 +1,13 @@
-import type { Metadata } from "next";
 import "./globals.css";
+import { inter, chakra } from "@/app/fonts";
+import type { Metadata } from "next";
 import Link from "next/link";
-import { Chakra_Petch } from "next/font/google";
+
 export const metadata: Metadata = {
   title: "PAMBII",
   description:
     "pambi.tech website clone by Dalas. This is not the official website.",
 };
-const font_chakra = Chakra_Petch({ subsets: ["latin"], weight: "700" });
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -15,10 +15,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased text-white ${font_chakra.className}`}>
-        <aside className="top-banner bg-primary sticky h-[50px] flex justify-center items-center">
-          <p className="text-base md:text-xl">
-            <span className="font-semibold">
+      <body className={`antialiased text-white ${inter.className}`}>
+        <aside
+          className={`top-banner ${chakra.className} bg-primary sticky h-[50px] flex justify-center items-center`}
+        >
+          <p className="text-base md:text-xl font-semibold">
+            <span className="font-bold">
               <Link className="underline" href={"https://pambii.quest"}>
                 Pambii Quest
               </Link>
