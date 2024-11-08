@@ -3,9 +3,10 @@ import pambiiLogo from "@/public/official_logo.webp";
 import { moreAboutCategories } from "@/app/lib/placeholder-data";
 import SocialMedias from "@/app/ui/social-media";
 import MoreAboutCategoryAside from "@/app/ui/main/header/aside/more-about-category";
-import raydiumLogo from "@/public/raydium_logo.png";
+import raydiumLogo from "@/public/raydium_logo.svg";
 import MoreAboutCategoryHeader from "@/app/ui/main/header/nav/more-about-category";
 import { chakra, montserrat } from "@/app/fonts";
+import OscillatingLogo from "@/app/ui/main/oscillating-logo";
 import Link from "next/link";
 import Image from "next/image";
 import { useCallback, useState } from "react";
@@ -94,7 +95,7 @@ export default function Home() {
               ))}
             </ul>
             <section className="nav__right-section-container flex items-center">
-              <button className="nav__btn-connect-wallet text-primary mr-1 py-2 px-3 rounded-xl bg-black border border-primary ">
+              <button className="nav__btn-connect-wallet text-primary mr-1 py-2 px-3 rounded-xl bg-black border border-primary hover:shadow-[0_0_8px]">
                 Connect Wallet
               </button>
               <button
@@ -127,20 +128,25 @@ export default function Home() {
               <h1 className="text-3xl lg:text-5xl font-semibold mb-4 lg:mb-6">
                 Welcome to the
                 <br />
-                <span className="text-primary whitespace-nowrap">PAMBII</span>
+                <span className="text-primary-light whitespace-nowrap">
+                  PAMBII
+                </span>
                 &nbsp;Universe!
               </h1>
               <h3
                 className={
-                  "text-lg lg:text-xl mb-4 text-[#C9C9C9] " +
+                  "text-lg lg:text-xl mb-4 text-[#C9C9C9] font-normal" +
                   montserrat.className
                 }
               >
-                <span className="text-primary">$PAMBII</span> is a token with
-                functionality! A Pokémon-Style fighting game, and a news and
-                quest platform for projects to get sponsored by the largest
+                <span className="text-primary-light">$PAMBII</span> is a token
+                with functionality! A Pokémon-Style fighting game, and a news
+                and quest platform for projects to get sponsored by the largest
                 community from Spain! Created by the biggest KOL in Spain, Dalas
               </h3>
+              <h5 className="text-center text-sm mb-2">
+                Unique Contract Address:
+              </h5>
               <section className="contract-address-container bg-[#1e1e1e] rounded-lg flex p-2">
                 <input
                   type="text"
@@ -183,11 +189,7 @@ export default function Home() {
               <section className="pambii-raydium-info mt-10 text-[#373737] rounded-lg py-6 px-6">
                 <section className="mt-10 text-white text-lg sm:text-xl lg:text-2xl font-semibold mb-4 lg:mb-6 z-10 flex items-center justify-center">
                   <p>PAMBII is Officially on</p>
-                  <Image
-                    className="logo-scale ml-2 w-12 h-12 transition-transform hover:cursor-pointer"
-                    src={raydiumLogo}
-                    alt="raydium logo."
-                  />
+                  <OscillatingLogo logo_src={raydiumLogo} />
                 </section>
               </section>
             </section>

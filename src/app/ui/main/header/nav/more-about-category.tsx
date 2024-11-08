@@ -17,7 +17,9 @@ export default function MoreAboutCategory({
         >
           {title}
           {isBeta && (
-            <span className="text-primary absolute text-xs top-0">beta</span>
+            <span className="text-primary-light absolute text-xs top-0">
+              beta
+            </span>
           )}
         </Link>
       ) : (
