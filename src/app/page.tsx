@@ -1,5 +1,6 @@
 "use client";
 import pambiiLogo from "@/public/official_logo.webp";
+import beeLogo from "@/public/bee.webp";
 import { moreAboutCategories } from "@/app/lib/placeholder-data";
 import SocialMedias from "@/app/ui/social-media";
 import MoreAboutCategoryAside from "@/app/ui/main/header/aside/more-about-category";
@@ -162,7 +163,7 @@ export default function Home() {
                     setCopied((prev) => !prev);
                     setTimeout(() => setCopied((prev) => !prev), 2000);
                   }}
-                  className="group bg-primary rounded-lg w-[33px] h-[33px] flex items-center transition-all justify-center ml-2 hover:scale-105 hover:shadow-button"
+                  className="group bg-primary rounded-lg w-[33px] h-[33px] flex items-center transition-all justify-center ml-2 hover:scale-105 hover:shadow-[0_0_8px_#DF8414]"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -185,11 +186,46 @@ export default function Home() {
                 </button>
               </section>
             </section>
-            <section className="pambii-on-raydium-section appear_from_right lg:ml-10 relative flex flex-col-reverse justify-end mb-4">
-              <section className="pambii-raydium-info mt-10 text-[#373737] rounded-lg py-6 px-6">
-                <section className="mt-10 text-white text-lg sm:text-xl lg:text-2xl font-semibold mb-4 lg:mb-6 z-10 flex items-center justify-center">
+            <section className="raydium-section appear_from_right lg:ml-10 relative flex flex-col justify-end mb-4">
+              <section className="z-10 -mb-10 flex justify-center relative">
+                <picture>
+                  <Image
+                    alt="Bee image"
+                    src={beeLogo}
+                    className="absolute w-[60px] h-[60px] -translate-x-full top-0"
+                  />
+                </picture>
+                <picture>
+                  <Image
+                    alt="PAMBII logo"
+                    src={pambiiLogo}
+                    className="w-48 h-48 rounded-xl"
+                  />
+                </picture>
+              </section>
+              <section className="z-0 bg-gray-opacity border border-[#373737] rounded-lg py-6 px-6">
+                <section className="mt-10 text-[#F9F9F9] text-lg sm:text-xl lg:text-2xl font-semibold mb-4 lg:mb-6 z-10 flex items-center justify-center">
                   <p>PAMBII is Officially on</p>
-                  <OscillatingLogo logo_src={raydiumLogo} />
+                  <OscillatingLogo key="raydium-logo" logo_src={raydiumLogo} />
+                </section>
+                <section className="flex flex-col items-center">
+                  <button className="mb-2 rounded-full border border-[#6F6F6F] px-6 py-2 transition-all hover:border-primary-light hover:shadow-[0_0_8px_#DF8414] flex justify-center w-max">
+                    <Link
+                      href="https://raydium.io/swap/?inputMint=sol&outputMint=8dGUaPCybF4e2EbqtKcDsvW74shNTsabd5M6z6zG9BN2"
+                      className="text-base font-semibold"
+                    >
+                      Trade on Raydium Now
+                    </Link>
+                  </button>
+                  <button className="rounded-full w-max border border-[#6F6F6F] px-10 py-4 transition-all hover:border-primary-light hover:shadow-[0_0_8px] hover:shadow-primary-light flex justify-center">
+                    <Link
+                      key="how-to-buy-on-raydium"
+                      href="https://medium.com/@PAMBII/how-to-buy-pambii-tokens-on-solana-a4a433de3db8"
+                      className="text-lg font-semibold"
+                    >
+                      How to buy on Raydium
+                    </Link>
+                  </button>
                 </section>
               </section>
             </section>

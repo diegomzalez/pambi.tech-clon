@@ -9,9 +9,9 @@ export default function OscillatingLogo({ logo_src }: { logo_src: string }) {
     return () => clearInterval(interval);
   }, []);
   return (
-    <picture>
+    <picture className="ml-2">
       <Image
-        className={`ml-2 w-12 h-12 transform transition-transform duration-1000 ease-in-out ${
+        className={`w-12 h-12 transform transition-transform duration-1000 ease-in-out ${
           isLarge ? "scale-110" : "scale-90"
         } hover:cursor-pointer`}
         src={logo_src}

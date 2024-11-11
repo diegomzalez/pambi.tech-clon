@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bg-gray-opacity {
+    background-color: hsla(0, 0%, 85%, .08);
+}
