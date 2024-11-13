@@ -15,6 +15,8 @@ const config: Config = {
       },
       backgroundImage: {
         screen1: "url('../public/bg-1.jpg')",
+        screen2: "url('../public/bg-2.png')",
+        loading: "url('../public/official_logo.webp')",
       },
     },
   },
