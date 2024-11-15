@@ -8,6 +8,31 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        slideInFromTop: {
+          "0%": {
+            transform: "translateY(-100%)",
+            opacity: "0",
+          },
+          "100%": {
+            transform: "translateY(0)",
+            opacity: "1",
+          },
+        },
+        slideInFromRight: {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(0)" },
+        },
+        slideInFromLeft: {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(0)" },
+        },
+      },
+      animation: {
+        "appear-from-top": "slideInFromTop 1s ease-out",
+        "appear-from-right": "slideInFromRight 1s ease-out",
+        "appear-from-left": "slideInFromLeft 1s ease-out",
+      },
       colors: {
         primary: "#D87006",
         "primary-light": "#DF8414",

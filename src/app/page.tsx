@@ -10,10 +10,12 @@ import FinancialInfo from "@/app/ui/main/financial-info";
 import Header from "@/app/ui/main/header/header";
 import CopyContractAddress from "@/app/ui/main/copy-contract-address";
 import PerformanceUnit from "@/app/ui/main/performance-unit";
+import SocialMedias from "@/app/ui/social-media";
+import MoreAboutFooter from "@/app/ui/more-about-footer";
+import blurOrange from "@/public/s-blur-orange.webp";
+import blurGreen from "@/public/l-blur-green.webp";
 import Link from "next/link";
 import Image from "next/image";
-import SocialMedias from "./ui/social-media";
-import MoreAboutFooter from "./ui/more-about-footer";
 
 export default function Home() {
   return (
@@ -36,7 +38,7 @@ export default function Home() {
           <Header />
           <section className="main__top-section">
             <section className="welcome-and-radium-section-container max-w-6xl mx-auto py-4 px-4 pb-12 grid grid-cols-1 lg:grid-cols-2 lg:mt-12">
-              <section className="welcome-section appear-from-left relative text-center lg:text-start mb-10">
+              <section className="welcome-section animate-appear-from-left animation-delay-200 relative text-center lg:text-start mb-10">
                 <h1 className="text-3xl lg:text-5xl font-semibold mb-4 lg:mb-6">
                   Welcome to the
                   <br />
@@ -62,7 +64,53 @@ export default function Home() {
                 </h5>
                 <CopyContractAddress />
               </section>
-              <section className="raydium-section appear_from_right lg:ml-10 relative flex flex-col justify-end mb-4">
+              <section className="raydium-section animate-appear-from-right animation-delay-200 lg:ml-10 relative flex flex-col-reverse justify-end mb-4">
+                <div>
+                  <picture>
+                    <Image
+                      className="absolute -left-[30%] -top-[-10%]  pointer-events-none"
+                      alt="Blurry orange image"
+                      src={blurOrange}
+                    />
+                  </picture>
+                  <picture>
+                    <Image
+                      className="absolute -left-[30%] -top-[30%] sm:-top-[%50]  pointer-events-none"
+                      alt="Blurry green image"
+                      src={blurGreen}
+                    />
+                  </picture>
+                </div>
+                <section className="z-0 bg-gray-opacity border border-[#373737] rounded-lg py-6 px-6">
+                  <section className="mt-10 text-[#F9F9F9] text-lg sm:text-xl lg:text-2xl font-semibold mb-4 lg:mb-6 z-10 flex items-center justify-center">
+                    <p>PAMBII is Officially on</p>
+                    <OscillatingLogo
+                      key="raydium-logo"
+                      logo_src={raydiumLogo}
+                    />
+                  </section>
+                  <section className="flex flex-col items-center">
+                    <button className="mb-2 rounded-full border border-[#6F6F6F] px-6 py-2 transition-all hover:border-primary-light hover:shadow-[0_0_8px_#DF8414] flex justify-center w-max">
+                      <Link
+                        target="_blank"
+                        href="https://raydium.io/swap/?inputMint=sol&outputMint=8dGUaPCybF4e2EbqtKcDsvW74shNTsabd5M6z6zG9BN2"
+                        className="text-base font-semibold"
+                      >
+                        Trade on Raydium Now
+                      </Link>
+                    </button>
+                    <button className="rounded-full w-max border border-[#6F6F6F] px-10 py-4 transition-all hover:border-primary-light hover:shadow-[0_0_8px] hover:shadow-primary-light flex justify-center">
+                      <Link
+                        target="_blank"
+                        key="how-to-buy-on-raydium"
+                        href="https://medium.com/@PAMBII/how-to-buy-pambii-tokens-on-solana-a4a433de3db8"
+                        className="text-lg font-semibold"
+                      >
+                        How to buy on Raydium
+                      </Link>
+                    </button>
+                  </section>
+                </section>
                 <section className="z-10 -mb-10 flex justify-center relative">
                   <picture>
                     <Image
@@ -78,34 +126,6 @@ export default function Home() {
                       className="w-48 h-48 rounded-xl"
                     />
                   </picture>
-                </section>
-                <section className="z-0 bg-gray-opacity border border-[#373737] rounded-lg py-6 px-6">
-                  <section className="mt-10 text-[#F9F9F9] text-lg sm:text-xl lg:text-2xl font-semibold mb-4 lg:mb-6 z-10 flex items-center justify-center">
-                    <p>PAMBII is Officially on</p>
-                    <OscillatingLogo
-                      key="raydium-logo"
-                      logo_src={raydiumLogo}
-                    />
-                  </section>
-                  <section className="flex flex-col items-center">
-                    <button className="mb-2 rounded-full border border-[#6F6F6F] px-6 py-2 transition-all hover:border-primary-light hover:shadow-[0_0_8px_#DF8414] flex justify-center w-max">
-                      <Link
-                        href="https://raydium.io/swap/?inputMint=sol&outputMint=8dGUaPCybF4e2EbqtKcDsvW74shNTsabd5M6z6zG9BN2"
-                        className="text-base font-semibold"
-                      >
-                        Trade on Raydium Now
-                      </Link>
-                    </button>
-                    <button className="rounded-full w-max border border-[#6F6F6F] px-10 py-4 transition-all hover:border-primary-light hover:shadow-[0_0_8px] hover:shadow-primary-light flex justify-center">
-                      <Link
-                        key="how-to-buy-on-raydium"
-                        href="https://medium.com/@PAMBII/how-to-buy-pambii-tokens-on-solana-a4a433de3db8"
-                        className="text-lg font-semibold"
-                      >
-                        How to buy on Raydium
-                      </Link>
-                    </button>
-                  </section>
                 </section>
               </section>
               <FinancialInfo />
@@ -123,7 +143,7 @@ export default function Home() {
                   logo_src={coinmarketcapLogo}
                   title="Market Tracking"
                   content="See our Real-Time Data!"
-                  href="https://www.pambi.tech/coinmarketcap"
+                  href="/coinmarketcap"
                 />
                 <PerformanceUnit
                   logo_src={dexTools}
@@ -135,7 +155,7 @@ export default function Home() {
                   logo_src={dexScreener}
                   title="Market Tracking"
                   content="See our Real-Time Data!"
-                  href="https://www.pambi.tech/coinmarketcap"
+                  href="https://dexscreener.com/solana/B6qQgSLeqV3Tp6SJwGqZBegTeKZ7oBQVoiTrxvFhw4qS"
                 />
               </section>
             </section>

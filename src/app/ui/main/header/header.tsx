@@ -16,15 +16,17 @@ export default function Header() {
     []
   );
   return (
-    <header
-      className={`${chakra.className} lg:appear_from_top max-w-7xl mx-auto p-6`}
-    >
+    <header className={`${chakra.className} max-w-7xl mx-auto p-6`}>
       <aside
         className={`header__aside-menu z-20 bg-transparency fixed h-svh w-screen transition-all duration-700 top-0 bottom-0 left-0 ${
           toggleAside ? "-translate-x-0" : "-translate-x-full"
         }`}
       >
-        <section className="aside-menu-container p-6 bg-black h-[1000px] md:h-svh w-screen sm:w-[400px]">
+        <section
+          className={`aside-menu-container z-40 p-6 bg-black h-svh w-screen sm:w-[400px] transition-all duration-500 delay-100 ${
+            toggleAside ? "-translate-x-0" : "-translate-x-full"
+          }`}
+        >
           <section className="aside-menu__top-section flex justify-between items-center mb-10">
             <section className="top-section__pambii-section flex items-center gap-x-4">
               <picture className="nav__pambii-logo-container">
@@ -70,7 +72,7 @@ export default function Header() {
           </section>
         </section>
       </aside>
-      <nav className="header__nav flex justify-between items-center">
+      <nav className="header__nav flex justify-between items-center lg:animate-appear-from-top animation-delay-200">
         <picture className="nav__pambii-logo-container">
           <Image
             className="w-14 h-14 md:w-16 md:h-16 rounded-md"
@@ -91,7 +93,9 @@ export default function Header() {
         </ul>
         <section className="nav__right-section-container flex items-center">
           <button className="nav__btn-connect-wallet text-primary mr-1 py-2 px-3 rounded-xl bg-black border border-primary hover:shadow-[0_0_8px]">
-            Connect Wallet
+            <Link target="_blank" href="https://phantom.app">
+              Connect Wallet
+            </Link>
           </button>
           <button
             className="nav__toggle-menu-button inline-flex items-center p-2 md:hidden"
