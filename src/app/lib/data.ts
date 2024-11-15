@@ -8,7 +8,7 @@ export async function fetchFinancialInfo(): Promise<IFinancialInfo> {
         resolve(financialInfo);
       }, 5000);
     });
-  } catch (error) {
-    throw new Error("Failed to fetch financial info: " + error);
+  } catch {
+    throw new Error("Failed to fetch financial info.");
   }
 }
