@@ -6,9 +6,9 @@ export async function fetchFinancialInfo(): Promise<IFinancialInfo> {
     return new Promise<IFinancialInfo>((resolve) => {
       setTimeout(() => {
         resolve(financialInfo);
-      }, 3000);
+      }, 5000);
     });
   } catch (error) {
-    throw new Error("Failed to fetch financial info.");
+    throw new Error("Failed to fetch financial info: " + error);
   }
 }

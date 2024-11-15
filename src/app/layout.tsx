@@ -1,7 +1,6 @@
 import "./globals.css";
-import { inter, chakra } from "@/app/fonts";
+import { inter } from "@/app/fonts";
 import type { Metadata } from "next";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "PAMBII",

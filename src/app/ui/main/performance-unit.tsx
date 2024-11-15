@@ -1,8 +1,6 @@
 import { montserrat } from "@/app/fonts";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import { Children, ReactNode } from "react";
-
 export default function PerformanceUnit({
   logo_src,
   href,

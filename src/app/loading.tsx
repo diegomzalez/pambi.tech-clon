@@ -1,7 +1,4 @@
 "use client";
-
-import { useEffect, useState } from "react";
-
 export default function Loading() {
   return (
     <section className="flex justify-center items-center h-screen bg-black">
